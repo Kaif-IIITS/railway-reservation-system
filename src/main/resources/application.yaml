@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: reservation.system
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/reservation_system
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: kaif2004
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  main:
+    banner-mode: off
+
+  Jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+
+
+jwt:
+  access:
+    expiration: 360000000
+
+  refresh:
+    expiration: 8640000000
+
+  secret:
+    key: myverysecuresecretkeyforrailwayreservationsystem123
+
+logging:
+  level:
+    root: WARN
+    org:
+      hibernate:
+        SQL: DEBUG
+        orm:
+          jdbc:
+            bind: TRACE
+      springframework:
+        security: TRACE
